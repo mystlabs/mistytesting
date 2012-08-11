@@ -4,13 +4,15 @@
  * Locate the appropriate vendor/autoload.php file and uses it as --bootstrap for PHPUnit
  */
 $arguments = $argv;
+unset($arguments[0]);
 
 $target = RunnerHelper::getTargetPath($arguments);
 $bootstrap = RunnerHelper::findBootstrapFor($target);
 
-exec(sprintf(
-	'phpunit --bootstrap=%s %s',
+echo shell_exec(sprintf(
+	'phpunit --bootstrap=%s %s %s',
 	$bootstrap,
+	$target,
 	implode(' ', $arguments)
 ));
 
@@ -19,7 +21,7 @@ class RunnerHelper
 	/**
 	 *	Get the absolute path of the target
 	 */
-	public static function getTargetPath($argv)
+	public static function getTargetPath(&$argv)
 	{
 		$currentDir = $_SERVER['PWD'];
 		$target = self::getTarget($argv);
