@@ -1,15 +1,9 @@
 {
     "name": "mystlabs/mistytesting",
     "type": "library",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "http://github.com/davedevelopment/hamcrest-php"
-        }
-    ],
     "minimum-stability": "dev",
     "description": "MistyTesting - collections of classes and helpers for testing purpose",
-    "require": {
+    "require-broken": {
         "mockery/mockery" : "0.7.*",
         "davedevelopment/hamcrest-php": "dev-master"
     },
