@@ -7,6 +7,7 @@
             "url": "http://github.com/davedevelopment/hamcrest-php"
         }
     ],
+    "minimum-stability": "dev",
     "description": "MistyTesting - collections of classes and helpers for testing purpose",
     "require": {
         "mockery/mockery" : "0.7.*",
