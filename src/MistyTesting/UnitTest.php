@@ -14,6 +14,7 @@ abstract class UnitTest extends \PHPUnit_Framework_TestCase
 	{
 		$this->after();
 		$this->clearTest();
+		//\Mockery::close();
 	}
 
 	public function initTest(){}
